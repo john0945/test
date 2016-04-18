@@ -133,8 +133,9 @@ def simpleTest():
     print "Dumping host connections"
     dumpNodeConnections(net.hosts)
     print "Testing network connectivity"
-    net.pingAll()
     print "Whoohoo for mirrored!"
+
+    net.pingAll()
     CLI(net)
     net.stop()
 

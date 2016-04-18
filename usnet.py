@@ -10,6 +10,7 @@ class SingleSwitchTopo(Topo):
 
 
 #how many
+    #this should be in mirrored
     def col(self, col, n):
         col_switch = {}
         for s in range(n):

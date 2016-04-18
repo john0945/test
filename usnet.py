@@ -105,9 +105,6 @@ class SingleSwitchTopo(Topo):
         s[6] = self.col(6,4)
         s[7] = self.col(7,6)
 
-        for h in range(4):
-            l_host[h+1] = self.addHost('l_h%s' % (h + 1))
-            self.addLink(s[1][h+1], l_host[h+1])
 
         for h in range(5):
             r_host[h+1] = self.addHost('r_h%s' % (h + 1))
@@ -115,6 +112,10 @@ class SingleSwitchTopo(Topo):
                 self.addLink(s[7][h + 1], r_host[h + 1])
             else:
                 self.addLink(s[7][h + 2], r_host[h + 1])
+
+        for h in range(4):
+            l_host[h + 1] = self.addHost('l_h%s' % (h + 1))
+            self.addLink(s[1][h + 1], l_host[h + 1])
 
         for l in connections:
             self.addLink(s[l[0]][l[1]], s[l[2]][l[3]])
@@ -133,6 +134,7 @@ def simpleTest():
     dumpNodeConnections(net.hosts)
     print "Testing network connectivity"
     net.pingAll()
+    print "Whoohoo for mirrored!"
     CLI(net)
     net.stop()
 

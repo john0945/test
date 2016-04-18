@@ -9,7 +9,7 @@ class SingleSwitchTopo(Topo):
     "Single switch connected to n hosts."
 
 
-
+#how many
     def col(self, col, n):
         col_switch = {}
         for s in range(n):
@@ -24,6 +24,7 @@ class SingleSwitchTopo(Topo):
         s = {}
         l_host = {}
         r_host = {}
+
 
         connections = [
             [1, 1, 3, 1],

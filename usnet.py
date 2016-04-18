@@ -9,7 +9,7 @@ class SingleSwitchTopo(Topo):
     "Single switch connected to n hosts."
 
 
-
+#this should be in master
     def col(self, col, n):
         col_switch = {}
         for s in range(n):

@@ -5,9 +5,7 @@ from mininet.log import setLogLevel
 from mininet.cli import CLI
 from mininet.node import RemoteController
 
-class SingleSwitchTopo(Topo):
-    "Single switch connected to n hosts."
-
+class USNET(Topo):
 
 #this should be in master
     def col(self, col, n):
@@ -121,9 +119,9 @@ class SingleSwitchTopo(Topo):
 
 
 
-def simpleTest():
+def usnet_run():
     "Create and test a simple network"
-    topo = SingleSwitchTopo()
+    topo = USNET()
     net = Mininet(topo=topo, controller=None)
     net.addController('c0', controller=RemoteController, ip="192.168.56.102", port=6633)
     net.start()
@@ -138,4 +136,4 @@ def simpleTest():
 if __name__ == '__main__':
     # Tell mininet to print useful information
     setLogLevel('info')
-    simpleTest()
+    usnet_run()

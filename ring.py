@@ -5,7 +5,7 @@ from mininet.log import setLogLevel
 from mininet.cli import CLI
 from mininet.node import RemoteController
 
-class SingleSwitchTopo(Topo):
+class ring(Topo):
     "Single switch connected to n hosts."
 
     def build(self):
@@ -28,7 +28,7 @@ class SingleSwitchTopo(Topo):
 
 def simpleTest():
     "Create and test a simple network"
-    topo = SingleSwitchTopo()
+    topo = ring()
     net = Mininet(topo=topo, controller=None)
     net.addController('c0', controller=RemoteController, ip="192.168.56.102", port=6633)
     net.start()

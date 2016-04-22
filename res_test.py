@@ -8,6 +8,7 @@ from usnet import USNET
 from simple import simple
 from ring import ring
 from time import sleep
+import os
 
 file_name = "1"
 
@@ -30,7 +31,7 @@ def testing(net, filename, host1, host2, switch1, switch2):
     h1.cmd("ping -i 0.01{} &".format(h2.IP()))
     h2.cmd("tcpdump -XX -n -i {}-eth0 -w {}.pcap  &".format(host2, filename))
     sleep(0.5)
-    cmd("link {} {} down ".format(s1, s2))
+    os.system("link {} {} down ".format(s1, s2))
     sleep(1)
 
     h1.cmd("kill %ping")

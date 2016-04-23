@@ -31,7 +31,8 @@ def testing(net, filename, host1, host2, switch1, switch2):
     h1.cmd("ping -i 0.01 {} &".format(h2.IP()))
     h2.cmd("tcpdump -XX -n -i {}-eth0 -w {}.pcap  &".format(host2, filename))
     sleep(2)
-    os.system("link {} {} down ".format(s1, s2))
+    #os.system("link {} {} down ".format(s1, s2))
+    net.configLinkStatus( switch1, switch2, 'down' )
     sleep(2)
 
     h1.cmd("kill %ping")

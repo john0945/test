@@ -30,8 +30,7 @@ def testing(net, time, host1, host2, switch1, switch2, network):
 
     h1.cmd("ping -i 0.01 {} &".format(h2.IP()))
     # print("tcpdump -XX -n -i {}-eth0 -w ./pcaps/\"{}-{}.pcap\"  &".format(host2, network, time))
-
-    h2.cmd("tcpdump -XX -n -i {}-eth0 -w ./pcaps/\"{}-{}.pcap\"  &".format(host2, network, time))
+    h2.cmd("tcpdump -XX -n -i {}-eth0 -w './pcaps/{}-{}.pcap'  &".format(host2, network, time))
     sleep(1)
     net.configLinkStatus( switch1, switch2, 'down' )
     sleep(1)
@@ -41,7 +40,7 @@ def testing(net, time, host1, host2, switch1, switch2, network):
 
 
     # print("tcpdump -tttttnr ./pcaps/\"{n}-{t}.pcap\" src host {ip} > ./results/'{n}-{t}.txt'".format(n=network, t=time, ip = h1.IP()))
-    h2.cmd("tcpdump -tttttnr ./pcaps/\"{n}-{t}.pcap\" src host {ip} > ./results/'{n}-{t}.txt'".format(n=network, t=time, ip = h1.IP()))
+    h2.cmd("tcpdump -tttttnr './pcaps/{n}-{t}.pcap' src host {ip} > ./results/'{n}-{t}.txt'".format(n=network, t=time, ip = h1.IP()))
     append_results(time, network)
     sleep(5)
 

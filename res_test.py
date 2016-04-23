@@ -32,9 +32,9 @@ def testing(net, time, host1, host2, switch1, switch2, network):
     # print("tcpdump -XX -n -i {}-eth0 -w ./pcaps/\"{}-{}.pcap\"  &".format(host2, network, time))
 
     h2.cmd("tcpdump -XX -n -i {}-eth0 -w ./pcaps/\"{}-{}.pcap\"  &".format(host2, network, time))
-    sleep(0.5)
+    sleep(1)
     net.configLinkStatus( switch1, switch2, 'down' )
-    sleep(0.5)
+    sleep(1)
     h1.cmd("kill %ping")
     h2.cmd("kill %tcpdump")
     net.configLinkStatus( switch1, switch2, 'up' )

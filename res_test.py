@@ -52,7 +52,7 @@ def simple_test(file_name):
     net.stop()
 
 
-def ring_test(file_name):
+def ring_test(filename):
 
     network = "ring"
     host1 = "h1"
@@ -65,7 +65,7 @@ def ring_test(file_name):
     net.stop()
 
 
-def usnet_test(file_name):
+def usnet_test(filename):
 
     network = "usnet"
     host1 = "l_h1"

@@ -22,7 +22,9 @@ def startup(topo):
     net.pingAll()
     return net
 
+
 def testing(net, time, host1, host2, switch1, switch2, network):
+
     h1 = net.get(host1)
     h2 = net.get(host2)
 
@@ -39,7 +41,7 @@ def testing(net, time, host1, host2, switch1, switch2, network):
     append_results(time, network)
 
 
-def simple_test(file_name):
+def simple_test(filename):
 
     network = simple
     host1 = "h1"

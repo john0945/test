@@ -39,7 +39,7 @@ def testing(net, filename, host1, host2, switch1, switch2):
     h2.cmd("kill %tcpdump")
     h2.cmd("tcpdump -tttttnr {}.pcap src host {} > {}.txt".format(filename, h1.IP(), filename))
 
-def simple_test():
+def simple_test(file_name):
 
     host1 = "h1"
     host2 = "h2"
@@ -52,7 +52,7 @@ def simple_test():
     net.stop()
 
 
-def ring_test():
+def ring_test(file_name):
 
     host1 = "h1"
     host2 = "h2"
@@ -65,13 +65,13 @@ def ring_test():
     net.stop()
 
 
-def usnet_test():
+def usnet_test(file_name):
 
     host1 = "l_h1"
     host2 = "r_h5"
     switch1 = "s41"
     switch2 = "s42"
-    filename = "usnet"+file_name
+    filename = "usnet"+file_namegit
 
     net = startup(USNET())
     testing(net, filename, host1, host2, switch1, switch2)
@@ -83,6 +83,14 @@ def usnet_test():
 if __name__ == '__main__':
     # Tell mininet to print useful information
     setLogLevel('info')
-    simple_test()
-    ring_test()
-    usnet_test()
+    simple_test("1")
+    ring_test("1")
+    usnet_test("1")
+
+    simple_test("2")
+    ring_test("2")
+    usnet_test("2")
+
+    simple_test("3")
+    ring_test("3")
+    usnet_test("3")

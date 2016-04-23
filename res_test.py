@@ -12,7 +12,9 @@ import os
 from time import ctime
 from failure_param import append_results
 
+
 def startup(topo):
+    os.system("sudo mn -c")
     net = Mininet(topo=topo, controller=None)
     net.addController('c0', controller=RemoteController, ip="192.168.56.102", port=6633)
     net.start()

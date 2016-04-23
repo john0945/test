@@ -11,7 +11,7 @@ def missing_elements(L):
     return sorted(set(range(start, end + 1)).difference(L))
 
 def append_results(time, network):
-    log = open("log.py", 'a')
+    log = open("log.txt", 'a')
 
     print("./results/{}-{}.txt".format(network, time))
     with open("./results/{}-{}.txt".format(network, time), 'r') as file:
@@ -23,4 +23,5 @@ def append_results(time, network):
 
         log.write("{} Testing {} - missing packets: {} \n".format(time, network, missing_elements(seq)))
 
+    log.write("\n\n\n\n\n")
     log.close()

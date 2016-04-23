@@ -29,21 +29,21 @@ def testing(net, time, host1, host2, switch1, switch2, network):
     h2 = net.get(host2)
 
     h1.cmd("ping -i 0.01 {} &".format(h2.IP()))
-    print("tcpdump -XX -n -i {}-eth0 -w ./pcaps/\"{}-{}.pcap\"  &".format(host2, network, time))
+    # print("tcpdump -XX -n -i {}-eth0 -w ./pcaps/\"{}-{}.pcap\"  &".format(host2, network, time))
 
     h2.cmd("tcpdump -XX -n -i {}-eth0 -w ./pcaps/\"{}-{}.pcap\"  &".format(host2, network, time))
-    sleep(2)
+    sleep(0.5)
     net.configLinkStatus( switch1, switch2, 'down' )
-    sleep(2)
-    net.configLinkStatus( switch1, switch2, 'up' )
+    sleep(0.5)
     h1.cmd("kill %ping")
     h2.cmd("kill %tcpdump")
+    net.configLinkStatus( switch1, switch2, 'up' )
 
-    print("tcpdump -tttttnr ./pcaps/\"{n}-{t}.pcap\" src host {ip} > ./results/'{n}-{t}.txt'".format(n=network, t=time, ip = h1.IP()))
+
+    # print("tcpdump -tttttnr ./pcaps/\"{n}-{t}.pcap\" src host {ip} > ./results/'{n}-{t}.txt'".format(n=network, t=time, ip = h1.IP()))
     h2.cmd("tcpdump -tttttnr ./pcaps/\"{n}-{t}.pcap\" src host {ip} > ./results/'{n}-{t}.txt'".format(n=network, t=time, ip = h1.IP()))
-    sleep(1)
     append_results(time, network)
-
+    sleep(5)
 
 def simple_test(filename):
 
@@ -92,6 +92,10 @@ if __name__ == '__main__':
 
     for s in range(3):
         simple_test("{}".format(ctime()))
+
+    for s in range(3):
         ring_test("{}".format(ctime()))
+
+    for s in range(3):
         usnet_test("{}".format(ctime()))
 

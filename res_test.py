@@ -10,8 +10,6 @@ from ring import ring
 from time import sleep
 import os
 
-file_name = "1"
-
 def startup(topo):
     net = Mininet(topo=topo, controller=None)
     net.addController('c0', controller=RemoteController, ip="192.168.56.102", port=6633)
@@ -25,8 +23,6 @@ def startup(topo):
 def testing(net, filename, host1, host2, switch1, switch2):
     h1 = net.get(host1)
     h2 = net.get(host2)
-    s1 = net.get(switch1)
-    s2 = net.get(switch2)
 
     h1.cmd("ping -i 0.01 {} &".format(h2.IP()))
     h2.cmd("tcpdump -XX -n -i {}-eth0 -w {}.pcap  &".format(host2, filename))
@@ -34,7 +30,7 @@ def testing(net, filename, host1, host2, switch1, switch2):
     #os.system("link {} {} down ".format(s1, s2))
     net.configLinkStatus( switch1, switch2, 'down' )
     sleep(2)
-
+    net.configLinkStatus( switch1, switch2, 'up' )
     h1.cmd("kill %ping")
     h2.cmd("kill %tcpdump")
     h2.cmd("tcpdump -tttttnr {}.pcap src host {} > {}.txt".format(filename, h1.IP(), filename))
@@ -83,14 +79,9 @@ def usnet_test(file_name):
 if __name__ == '__main__':
     # Tell mininet to print useful information
     setLogLevel('info')
-    simple_test("1")
-    ring_test("1")
-    usnet_test("1")
 
-    simple_test("2")
-    ring_test("2")
-    usnet_test("2")
+    for s in range(3):
+        simple_test("{}".format(s))
+        ring_test("{}".format(s))
+        usnet_test("{}".format(s))
 
-    simple_test("3")
-    ring_test("3")
-    usnet_test("3")

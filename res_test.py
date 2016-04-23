@@ -54,16 +54,27 @@ def simple_test():
 
 def ring_test():
 
+    host1 = "h1"
+    host2 = "h2"
+    switch1 = "s1"
+    switch2 = "s2"
+    filename = "ring"+file_name
 
     net = startup(ring())
-
+    testing(net, filename, host1, host2, switch1, switch2)
     net.stop()
 
 
 def usnet_test():
 
-    net = startup(USNET())
+    host1 = "l_h1"
+    host2 = "r_h5"
+    switch1 = "s11"
+    switch2 = "s76"
+    filename = "usnet"+file_name
 
+    net = startup(USNET())
+    testing(net, filename, host1, host2, switch1, switch2)
     net.stop()
 
 
@@ -73,3 +84,5 @@ if __name__ == '__main__':
     # Tell mininet to print useful information
     setLogLevel('info')
     simple_test()
+    ring_test()
+    usnet_test()

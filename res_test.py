@@ -37,7 +37,7 @@ def testing(net, time, host1, host2, switch1, switch2, network):
     h1.cmd("kill %ping")
     h2.cmd("kill %tcpdump")
     h2.cmd("tcpdump -tttttnr pcaps/{n}-{t}.pcap src host {ip} > results/{n}-{t}.txt".format(n=network, t=time, ip = h1.IP()))
-
+    sleep(1)
     append_results(time, network)
 
 

@@ -71,7 +71,7 @@ def usnet_test(file_name):
     host2 = "r_h5"
     switch1 = "s41"
     switch2 = "s42"
-    filename = "usnet"+file_namegit
+    filename = "usnet"+file_name
 
     net = startup(USNET())
     testing(net, filename, host1, host2, switch1, switch2)

@@ -10,19 +10,17 @@ def missing_elements(L):
 
     return sorted(set(range(start, end + 1)).difference(L))
 
+def append_results(time, network):
+    log = open("log.py", 'a')
 
-files = glob.glob('./*.txt')
 
-log = open("log.py", 'a')
-
-for f in files:
-    with open(f, 'r') as file:
+    with open("results/{}-{}.txt".format(network, time), 'r') as file:
         seq = []
         for line in file:
             seq_pos = line.find("seq")
             seq_line = [int(s) for s in re.findall(r'\d+', line[seq_pos:seq_pos + 10])]
             seq.append(seq_line[0])
 
-        log.write("The missing packets in {} are {} \n".format(f[2:-4], missing_elements(seq)))
+        log.write("{} Testing {} - missing packets: {} \n".format(time, network, missing_elements(seq)))
 
-log.close()
+    log.close()

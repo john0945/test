@@ -47,7 +47,7 @@ def testing(net, time, host1, host2, switch1, switch2, network):
 
 def simple_test(filename):
 
-    network = simple
+    network = "simple"
     host1 = "h1"
     host2 = "h2"
     switch1 = "s1"

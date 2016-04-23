@@ -14,7 +14,7 @@ def append_results(time, network):
     log = open("log.py", 'a')
 
     print("./results/{}-{}.txt".format(network, time))
-    with open("./results/'{}-{}.txt'".format(network, time), 'r') as file:
+    with open("./results/{}-{}.txt".format(network, time), 'r') as file:
         seq = []
         for line in file:
             seq_pos = line.find("seq")

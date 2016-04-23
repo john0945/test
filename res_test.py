@@ -29,7 +29,7 @@ def testing(net, time, host1, host2, switch1, switch2, network):
     h2 = net.get(host2)
 
     h1.cmd("ping -i 0.01 {} &".format(h2.IP()))
-    h2.cmd("tcpdump -XX -n -i {}-eth0 -w pcaps/{}-{}.pcap  &".format(host2, network, filename))
+    h2.cmd("tcpdump -XX -n -i {}-eth0 -w pcaps/{}-{}.pcap  &".format(host2, network, time))
     sleep(2)
     net.configLinkStatus( switch1, switch2, 'down' )
     sleep(2)

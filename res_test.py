@@ -28,7 +28,7 @@ def testing(net, filename, host1, host2, switch1, switch2):
     s1 = net.get(switch1)
     s2 = net.get(switch2)
 
-    h1.cmd("ping -i 0.01{} &".format(h2.IP()))
+    h1.cmd("ping -i 0.01 {} &".format(h2.IP()))
     h2.cmd("tcpdump -XX -n -i {}-eth0 -w {}.pcap  &".format(host2, filename))
     sleep(0.5)
     os.system("link {} {} down ".format(s1, s2))

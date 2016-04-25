@@ -1,7 +1,19 @@
+#!/bin/bash
+# pktgen.conf -- Sample configuration for send
 
+modprobe pktgen
 
-DEVICE=$1
+DEVICE=$'h1-eth0'
 PKTLEN=$2
+CPUS=1
+
+
+PKT_SIZE="pkt_size 64"
+COUNT="count 0"
+DELAY="delay 10000000"
+
+ETH="h1-eth0"
+MAC==$(ifconfig -a | grep h1-eth0 | cut -d' ' -f 11)
 
 if [ -z $DEVICE ]; then
   echo "$0 [IFNAME]"
@@ -46,8 +58,9 @@ PGDEV=/proc/net/pktgen/$DEVICE
 pgset "clone_skb 0"
 pgset "min_pkt_size $PKTLEN"
 pgset "max_pkt_size $PKTLEN"
-pgset "dst 192.168.20.242"
-pgset "dst_mac 90:e2:ba:22:70:ac"
+pgset "$DELAY"
+pgset "dst 10.0.0.2"
+pgset "dst_mac 00:00:00:00:00:02"
 pgset "count 10000000"
 
 # Time to run

@@ -46,8 +46,7 @@ def testing(net, time, host1, host2, switch1, switch2, network):
     # print("tcpdump -tttttnr ./pcaps/\"{n}-{t}.pcap\" src host {ip} > ./results/'{n}-{t}.txt'".format(n=network, t=time, ip = h1.IP()))
     h2.cmd("tcpdump -tttttnr './pcaps/{n}-{t}.pcap' src host {ip} > ./results/'{n}-{t}.txt'".format(n=network, t=time, ip = h1.IP()))
 
-    # h1.cmd("tcpdump -tttttnr './host_pcaps/{n}-{t}.pcap' src host {ip} > ./host_results/'{n}-{t}.txt'".format(n=network, t=time,
-                                                                                                    ip=h1.IP()))
+    # h1.cmd("tcpdump -tttttnr './host_pcaps/{n}-{t}.pcap' src host {ip} > ./host_results/'{n}-{t}.txt'".format(n=network, t=time, ip=h1.IP()))
     append_results(time, network)
     sleep(5)
 
@@ -109,8 +108,8 @@ if __name__ == '__main__':
     with open('log.txt', 'a') as log:
         log.write('\n')
 
-    for s in range(3):
-        usnet_test("{}".format(ctime()))
+    #for s in range(3):
+   #     usnet_test("{}".format(ctime()))
 
     with open('log.txt', 'a') as log:
         log.write('\n-------------------------------------------------------------\n')

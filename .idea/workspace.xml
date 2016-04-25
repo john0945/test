@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b879980e-c800-411d-9acf-abd7409fe6c5" name="Default" comment="" />
+    <list default="true" id="b879980e-c800-411d-9acf-abd7409fe6c5" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/log.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ring1.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ring1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ring2.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ring2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ring3.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ring3.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/simple1.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/simple1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/simple2.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/simple2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/simple3.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/simple3.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/traffic.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/traffic2.tcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/traffic3.tcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/traffic4.tcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/traffic5.tcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/traffic6.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/traffic6.tcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/traffic6.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/usnet1.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/usnet1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/usnet2.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/usnet2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/usnet3.pcap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/usnet3.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="test.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +86,8 @@
       <file leaf-file-name="usnet.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/usnet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="127" column="76" selection-start-line="127" selection-start-column="76" selection-end-line="127" selection-end-column="76" />
+            <state relative-caret-position="210">
+              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -88,10 +118,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="y" value="22" />
-    <option name="width" value="1600" />
-    <option name="height" value="838" />
+    <option name="x" value="1512" />
+    <option name="y" value="71" />
+    <option name="width" value="948" />
+    <option name="height" value="546" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -118,7 +148,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -140,6 +169,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -449,14 +479,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="22" width="1600" height="838" extended-state="0" />
+    <frame x="1512" y="71" width="948" height="546" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36919832" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32769832" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5283019" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -503,6 +533,24 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -580,8 +628,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/usnet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="127" column="76" selection-start-line="127" selection-start-column="76" selection-end-line="127" selection-end-column="76" />
+        <state relative-caret-position="210">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
           <folding />
         </state>
       </provider>

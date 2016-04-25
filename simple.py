@@ -28,7 +28,7 @@ def simpleTest():
     "Create and test a simple network"
     topo = simple()
     net = Mininet(topo=topo, controller=None)
-    net.addController('c0', controller=RemoteController, ip="192.168.56.102", port=6633)
+    net.addController('c0')
     net.start()
     print "Dumping host connections"
     dumpNodeConnections(net.hosts)

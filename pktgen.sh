@@ -15,6 +15,8 @@ DELAY="delay 10000000"
 ETH="h1-eth0"
 MAC==$(ifconfig -a | grep h1-eth0 | cut -d' ' -f 11)
 
+COUNT = "count 500"
+
 if [ -z $DEVICE ]; then
   echo "$0 [IFNAME]"
 	exit -1
@@ -55,7 +57,8 @@ pgset "add_device $DEVICE"
 echo "Configuring devices"
 
 PGDEV=/proc/net/pktgen/$DEVICE
-pgset "clone_skb 0"
+pgset "$COUNT"
+pgset "clone_skb 1"
 pgset "min_pkt_size $PKTLEN"
 pgset "max_pkt_size $PKTLEN"
 pgset "$DELAY"

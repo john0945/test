@@ -14,9 +14,10 @@ from failure_param import append_results
 
 
 def startup(topo):
-    net = Mininet(topo=topo, controller=None)
-    net.addController('c0', controller=RemoteController, ip="192.168.56.102", port=6633)
+    net = Mininet(topo=topo)
+    # net.addController('c0', controller=RemoteController, ip="192.168.56.102", port=6633)
     net.start()
+    CLI(net)
     print ("Testing network connectivity")
     net.pingAll()
     return net

@@ -7,9 +7,10 @@ from itertools import *
 # below function taken from StackOverflow answer by Martijn Pieters http://stackoverflow.com/questions/16974047/efficient-way-to-find-missing-elements-in-an-integer-sequence
 def missing_elements(L):
 
-    start, end = L[0], L[-1]
+
 
     if L.len() > 0:
+        start, end = L[0], L[-1]
         return sorted(set(range(start, end + 1)).difference(L))
 
     else:

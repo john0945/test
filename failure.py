@@ -8,8 +8,7 @@ from itertools import *
 def missing_elements(L):
 
 
-
-    if L.len() > 0:
+    if len(L) > 0:
         start, end = L[0], L[-1]
         return sorted(set(range(start, end + 1)).difference(L))
 

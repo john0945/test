@@ -14,7 +14,6 @@ from failure_param import append_results
 
 
 def startup(topo):
-    os.system("sudo mn -c")
     net = Mininet(topo=topo, controller=None)
     net.addController('c0', controller=RemoteController, ip="192.168.56.102", port=6633)
     net.start()
@@ -90,13 +89,23 @@ def usnet_test(filename):
 if __name__ == '__main__':
     # Tell mininet to print useful information
     setLogLevel('info')
+    os.system("sudo mn -c")
 
     for s in range(3):
         simple_test("{}".format(ctime()))
 
+    with open('log.txt', 'a') as log:
+        log.write('\n')
+
     for s in range(3):
         ring_test("{}".format(ctime()))
 
+    with open('log.txt', 'a') as log:
+        log.write('\n')
+
     for s in range(3):
         usnet_test("{}".format(ctime()))
+
+    with open('log.txt', 'a') as log:
+        log.write('\n-------------------------------------------------------------\n')
 

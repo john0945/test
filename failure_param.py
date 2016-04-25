@@ -6,9 +6,14 @@ from itertools import *
 
 # below function taken from StackOverflow answer by Martijn Pieters http://stackoverflow.com/questions/16974047/efficient-way-to-find-missing-elements-in-an-integer-sequence
 def missing_elements(L):
-    start, end = L[0], L[-1]
 
-    return sorted(set(range(start, end + 1)).difference(L))
+
+    if len(L) > 0:
+        start, end = L[0], L[-1]
+        return sorted(set(range(start, end + 1)).difference(L))
+
+    else:
+        return 0
 
 def append_results(time, network):
     log = open("log.txt", 'a')
@@ -21,7 +26,6 @@ def append_results(time, network):
             seq_line = [int(s) for s in re.findall(r'\d+', line[seq_pos:seq_pos + 10])]
             seq.append(seq_line[0])
 
-        log.write("{} Testing {} - missing packets: {} \n".format(time, network, missing_elements(seq)))
+        log.write("{} - missing packets: {} ({})\n".format(network, missing_elements(seq), time))
 
-    log.write("\n\n\n\n\n")
     log.close()

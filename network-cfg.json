@@ -1,0 +1,120 @@
+{
+    "ports" : {
+    "of:0000000000000001/4" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.0.1.254/24" ]
+        }
+        ]
+    },
+    "of:0000000000000002/4" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.0.2.254/24" ]
+        }
+        ]
+    },
+    "of:0000000000000002/6" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.0.2.254/24" ]
+        }
+        ]
+    },
+    "of:0000000000000002/5" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.0.2.254/24" ]
+        }
+        ]
+    }
+    },
+    "devices" : {
+        "of:0000000000000001" : {
+            "segmentrouting" : {
+                "name" : "s1",
+                "nodeSid" : 101,
+                "routerIp" : "10.0.1.254",
+                "routerMac" : "00:00:00:00:01:80",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000002" : {
+            "segmentrouting" : {
+                "name" : "s2",
+                "nodeSid" : 102,
+                "routerIp" : "10.0.2.254",
+                "routerMac" : "00:00:00:00:02:80",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000003" : {
+            "segmentrouting" : {
+                "name" : "s3",
+                "nodeSid" : 103,
+                "routerIp" : "192.168.0.33",
+                "routerMac" : "00:00:01:00:33:80",
+                "isEdgeRouter" : false,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000004" : {
+            "segmentrouting" : {
+                "name" : "s4",
+                "nodeSid" : 104,
+                "routerIp" : "192.168.0.44",
+                "routerMac" : "00:00:01:00:44:80",
+                "isEdgeRouter" : false,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000005" : {
+            "segmentrouting" : {
+                "name" : "s5",
+                "nodeSid" : 105,
+                "routerIp" : "192.168.0.55",
+                "routerMac" : "00:00:01:00:55:80",
+                "isEdgeRouter" : false,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000006" : {
+            "segmentrouting" : {
+                "name" : "s6",
+                "nodeSid" : 106,
+                "routerIp" : "192.168.0.66",
+                "routerMac" : "00:00:01:00:66:80",
+                "isEdgeRouter" : false,
+                "adjacencySids" : []
+            }
+        }
+    },
+    "hosts" : {
+        "00:00:00:00:00:01/-1" : {
+            "basic": {
+                "ips": ["10.0.1.1"],
+                "location": "of:0000000000000001/4"
+            }
+        },
+        "00:00:00:00:00:02/-1" : {
+            "basic": {
+                "ips": ["10.0.2.1"],
+                "location": "of:0000000000000002/4"
+            }
+        },
+        "00:00:00:00:00:03/-1" : {
+            "basic": {
+                "ips": ["10.0.2.2"],
+                "location": "of:0000000000000002/6"
+            }
+        },
+        "00:00:00:00:00:04/-1" : {
+            "basic": {
+                "ips": ["10.0.2.3"],
+                "location": "of:0000000000000002/5"
+            }
+        }
+    }
+}

@@ -15,18 +15,17 @@ def missing_elements(L):
     else:
         return 0
 
-files = glob.glob('./*.txt')
+def append_results(time):
+    log = open("log.txt", 'a')
 
-log = open("log.py", 'a')
-
-for f in files:
-    with open(f, 'r') as file:
+    print("./results/{}.txt".format(time))
+    with open("./results/{}.txt".format(time), 'r') as file:
         seq = []
         for line in file:
             seq_pos = line.find("seq")
             seq_line = [int(s) for s in re.findall(r'\d+', line[seq_pos:seq_pos + 10])]
             seq.append(seq_line[0])
 
-        log.write("The missing packets in {} are {} \n".format(f[2:-4], missing_elements(seq)))
-
-log.close()
+        miss =  missing_elements(seq)
+        log.write("Out of {} packets, {} were missing. They were {} ({})\n".format(len(seq), len(miss), miss,time))
+    log.close()

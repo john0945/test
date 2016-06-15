@@ -128,7 +128,7 @@ def usnet_run():
     print "Dumping host connections"
     dumpNodeConnections(net.hosts)
     print "Testing network connectivity"
-    net.pingAll()
+#    net.pingAll()
     CLI(net)
     net.stop()
 

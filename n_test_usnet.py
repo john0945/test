@@ -7,6 +7,8 @@ from mininet.node import RemoteController
 from mininet.node import OVSSwitch
 from functools import partial
 
+from time import sleep
+
 class USNET(Topo):
 
 #this should be in master
@@ -14,6 +16,7 @@ class USNET(Topo):
         col_switch = {}
         for s in range(n):
             col_switch[s + 1] = self.addSwitch('s%s%s' % (col, s + 1))
+            # self.switches.append("s" + str(col)+ str(s + 1))
             if s > 0:
                 self.addLink(col_switch[s], col_switch[s + 1])
 
@@ -115,7 +118,8 @@ class USNET(Topo):
                 self.addLink(s[7][h + 2], r_host[h + 1])
 
         for l in connections:
-            self.addLink(s[l[0]][l[1]], s[l[2]][l[3]])
+            l = self.addLink(s[l[0]][l[1]], s[l[2]][l[3]])
+            #print(l)
 
 def enable_bfd(net):
     links = net.links
@@ -132,6 +136,31 @@ def enable_bfd(net):
             node2.cmd("ovs-vsctl set interface {} bfd:enable=true ".format(intf_name2))
 
 
+def test(net):
+    switches = net.switches
+
+    for switch in switches:
+        print (switch.name)
+
+        if switch.name[1] == '1' or switch.name[1] == '7':
+            print ('skip')
+
+        else:
+            for k, v in switch.ports.items():
+                if k.name[0] == 's':
+                    switch.cmd("ifconfig {} down &".format(k))
+
+            print (switch.name)
+            sleep(0.5)
+            net.pingAll()
+
+            for k, v in switch.ports.items():
+                if k.name[0] == 's':
+                    switch.cmd("ifconfig {} up &".format(k))
+
+            sleep(0.5)
+
+
 def usnet_run():
     "Create and test a simple network"
     topo = USNET()
@@ -140,10 +169,16 @@ def usnet_run():
     net.addController('c0', controller=RemoteController, ip="127.0.0.1", port=6633)
     net.start()
     enable_bfd(net)
+    print "bfd enabled"
     print "Dumping host connections"
     dumpNodeConnections(net.hosts)
+    CLI(net)
     print "Testing network connectivity"
-#    net.pingAll()
+    test(net)
+    CLI(net)
+
+    # print(self.switches)
+
     CLI(net)
     net.stop()
 

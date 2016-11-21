@@ -98,11 +98,11 @@ def link_test(net):
             filename = intf_name + '-' + intf_name2
 
             os.system("sudo tshark -n -i eth0 -T text > tester_results/{}.txt  &".format(filename))
-            sleep(5)
+            sleep(1)
             node1.cmd("ifconfig {} down &".format(intf_name))
             node2.cmd("ifconfig {} down &".format(intf_name2))
 
-            sleep(5)
+            sleep(2)
 
             # net.pingAll()
             os.system("sudo pkill tshark")
@@ -110,7 +110,7 @@ def link_test(net):
 
             node1.cmd("ifconfig {} up &".format(intf_name))
             node2.cmd("ifconfig {} up &".format(intf_name2))
-            sleep(2)
+            sleep(1)
 
 
 
@@ -169,6 +169,10 @@ def append_results(filename):
         for line in file:
             l= line.split(' ')
             # print(l)
+            if l[0] == '':
+                l.pop(0)
+            if l[0] == '':
+                l.pop(0)
             if 'OFPT_PORT_STATUS\n' in l and start == -1:
                 start = float(l[1])
                 print(start)
@@ -220,7 +224,7 @@ def config(opts):
     if test == 'node':
         node_test(net)
     if test == 'link':
-        for i in range(20):
+        for i in range(16):
             link_test(net)
     if test == 'agg':
         agg_test(net)
@@ -235,4 +239,3 @@ if __name__ == '__main__':
     setLogLevel('info')
     config(opts)
     os.system('sudo mn -c')
-

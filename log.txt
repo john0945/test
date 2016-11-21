@@ -1,24 +1,165 @@
-The 21 missing packets are [189, 191, 193, 195, 197, 199, 201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229] (Tue Jun  7 15:25:37 2016)
-The 0 missing packets are [] (Tue Jun  7 15:26:19 2016)
-The 0 missing packets are [] (Tue Jun  7 15:26:47 2016)
-The 0 missing packets are [] (Tue Jun  7 15:28:09 2016)
-Out of 316 packets, 0 were missing. They were [] (Tue Jun  7 15:31:26 2016)
-Out of 315 packets, 0 were missing. They were [] (Tue Jun  7 15:35:01 2016)
-Out of 522 packets, 0 were missing. They were [] (Tue Jun  7 15:38:10 2016)
-Out of 480 packets, 0 were missing. They were [] (Tue Jun  7 15:39:33 2016)
-Out of 313 packets, 0 were missing. They were [] (Tue Jun  7 15:42:20 2016)
-Out of 434 packets, 17 were missing. They were [370, 372, 374, 376, 378, 380, 382, 384, 386, 388, 390, 392, 394, 396, 398, 400, 402] (Tue Jun  7 15:44:16 2016)
-Out of 428 packets, 16 were missing. They were [369, 371, 373, 375, 377, 379, 381, 383, 385, 387, 389, 391, 393, 395, 397, 399] (Tue Jun  7 15:44:58 2016)
-Out of 313 packets, 0 were missing. They were [] (Tue Jun  7 15:45:15 2016)
-Out of 313 packets, 0 were missing. They were [] (Tue Jun  7 15:46:02 2016)
-Out of 313 packets, 0 were missing. They were [] (Tue Jun  7 15:47:01 2016)
-Out of 396 packets, 16 were missing. They were [369, 371, 373, 375, 377, 379, 381, 383, 385, 387, 389, 391, 393, 395, 397, 399] (Tue Jun  7 15:48:17 2016)
-Out of 314 packets, 0 were missing. They were [] (Tue Jun  7 15:48:48 2016)
-Out of 312 packets, 0 were missing. They were [] (Tue Jun  7 15:49:16 2016)
-Out of 321 packets, 0 were missing. They were [] (Tue Jun  7 15:49:46 2016)
-Out of 320 packets, 0 were missing. They were [] (Tue Jun  7 15:50:45 2016)
-Out of 313 packets, 0 were missing. They were [] (Tue Jun  7 15:51:33 2016)
-Out of 371 packets, 3 were missing. They were [369, 371, 373] (Tue Jun  7 15:55:39 2016)
-Out of 316 packets, 0 were missing. They were [] (Tue Jun  7 16:01:11 2016)
-Out of 312 packets, 0 were missing. They were [] (Tue Jun  7 16:02:20 2016)
-Out of 319 packets, 0 were missing. They were [] (Tue Jun  7 19:11:02 2016)
+For s1-eth2-s2-eth2, the first flow_mod was received at -1 and the last at-1
+For s2-eth3-s3-eth2, the first flow_mod was received at -1 and the last at-1
+For s3-eth3-s4-eth2, the first flow_mod was received at -1 and the last at-1
+For s4-eth3-s1-eth3, the first flow_mod was received at -1 and the last at-1
+For s1-eth2-s2-eth2, the first flow_mod was received at -1 and the last at-1
+For s2-eth3-s3-eth2, the first flow_mod was received at -1 and the last at-1
+For s1-eth2-s2-eth2, the first flow_mod was received at -1 and the last at-1
+For s2-eth3-s3-eth2, the first flow_mod was received at -1 and the last at-1
+For s1-eth2-s2-eth2, the first flow_mod was received at 0.024087202 and the last at0.030928871
+For s2-eth3-s3-eth2, the first flow_mod was received at 0.02446489 and the last at0.031143189
+For s3-eth3-s4-eth2, the first flow_mod was received at 0.023698464 and the last at0.030612707
+For s4-eth3-s1-eth3, the first flow_mod was received at 0.025941209 and the last at0.033138301
+For s11-eth1-s12-eth1, the first flow_mod was received at 0.024321778 and the last at0.035232593
+For s11-eth3-s31-eth2, the first flow_mod was received at 0.026110161 and the last at0.047318486
+For s12-eth2-s13-eth1, the first flow_mod was received at 0.028030378 and the last at0.037174771
+For s12-eth4-s31-eth3, the first flow_mod was received at 0.02375585 and the last at0.059361111
+For s13-eth2-s14-eth1, the first flow_mod was received at 0.024812008 and the last at0.03669213
+For s13-eth4-s21-eth1, the first flow_mod was received at 0.023542095 and the last at0.032802642
+For s13-eth5-s32-eth3, the first flow_mod was received at 0.025346532 and the last at0.042326343
+For s14-eth3-s21-eth2, the first flow_mod was received at 0.023643434 and the last at0.03461932
+For s14-eth4-s33-eth2, the first flow_mod was received at 0.025110127 and the last at0.042966597
+For s21-eth3-s32-eth4, the first flow_mod was received at 0.023118099 and the last at0.032811618
+For s31-eth1-s32-eth1, the first flow_mod was received at 0.02386761 and the last at0.029201645
+For s31-eth4-s41-eth2, the first flow_mod was received at 0.040822693 and the last at0.049046317
+For s31-eth5-s51-eth2, the first flow_mod was received at 0.030233391 and the last at0.058650038
+For s32-eth2-s33-eth1, the first flow_mod was received at 0.04000213 and the last at0.051401832
+For s32-eth5-s41-eth3, the first flow_mod was received at 0.025490492 and the last at0.058467644
+For s33-eth3-s42-eth2, the first flow_mod was received at 0.028088976 and the last at0.046234843
+For s41-eth1-s42-eth1, the first flow_mod was received at 0.027374923 and the last at0.047989677
+For s41-eth4-s51-eth3, the first flow_mod was received at 0.025673848 and the last at0.042603425
+For s41-eth5-s52-eth3, the first flow_mod was received at 0.023890258 and the last at0.046039608
+For s42-eth3-s53-eth3, the first flow_mod was received at 0.024155151 and the last at0.040368813
+For s42-eth4-s54-eth2, the first flow_mod was received at 0.023947158 and the last at0.036792273
+For s51-eth1-s52-eth1, the first flow_mod was received at 0.024625756 and the last at0.035446456
+For s51-eth4-s61-eth2, the first flow_mod was received at 0.029911571 and the last at0.043009469
+For s51-eth5-s71-eth3, the first flow_mod was received at 0.024541506 and the last at0.042559846
+For s52-eth2-s53-eth1, the first flow_mod was received at 0.024351822 and the last at0.04975859
+For s52-eth4-s62-eth3, the first flow_mod was received at 0.027189663 and the last at0.039776946
+For s53-eth2-s54-eth1, the first flow_mod was received at -1 and the last at-1
+For s53-eth4-s63-eth3, the first flow_mod was received at 0.023870716 and the last at0.039896581
+For s54-eth3-s64-eth2, the first flow_mod was received at 0.025116887 and the last at0.042494242
+For s61-eth1-s62-eth1, the first flow_mod was received at 0.027903924 and the last at0.041702102
+For s61-eth3-s72-eth4, the first flow_mod was received at 0.045132511 and the last at0.065593012
+For s62-eth2-s63-eth1, the first flow_mod was received at -1 and the last at-1
+For s62-eth4-s73-eth4, the first flow_mod was received at 0.028016117 and the last at0.038288443
+For s62-eth5-s74-eth3, the first flow_mod was received at 0.024911968 and the last at0.033571613
+For s63-eth2-s64-eth1, the first flow_mod was received at 0.022461292 and the last at0.03218719
+For s63-eth4-s74-eth4, the first flow_mod was received at 0.023004598 and the last at0.032999263
+For s63-eth5-s75-eth4, the first flow_mod was received at 0.026089825 and the last at0.041125309
+For s64-eth3-s76-eth3, the first flow_mod was received at 0.024352573 and the last at0.038540219
+For s71-eth1-s72-eth1, the first flow_mod was received at 0.026240963 and the last at0.048929617
+For s72-eth2-s73-eth1, the first flow_mod was received at 0.024476641 and the last at0.041902601
+For s73-eth2-s74-eth1, the first flow_mod was received at 0.023604048 and the last at0.032536106
+For s74-eth2-s75-eth1, the first flow_mod was received at 0.023022073 and the last at0.044943238
+For s75-eth2-s76-eth1, the first flow_mod was received at 0.025199086 and the last at0.041307915
+For s11-eth1-s12-eth1, the first flow_mod was received at 0.028641738 and the last at0.039383668
+For s11-eth3-s31-eth2, the first flow_mod was received at 0.024471742 and the last at0.076451036
+For s12-eth2-s13-eth1, the first flow_mod was received at 0.024781543 and the last at0.030659499
+For s12-eth4-s31-eth3, the first flow_mod was received at 0.02465228 and the last at0.047347737
+For s13-eth2-s14-eth1, the first flow_mod was received at 0.027095953 and the last at0.037507523
+For s13-eth4-s21-eth1, the first flow_mod was received at 0.024743991 and the last at0.029400779
+For s13-eth5-s32-eth3, the first flow_mod was received at 0.025503884 and the last at0.04131733
+For s1-eth2-s2-eth2, the first flow_mod was received at 0.024488832 and the last at0.025940051
+s1-eth2-s2-eth2,3.686205301,0.023471327,0.025561071,19
+s2-eth3-s3-eth2,82.0,3.0,-78.252629535,14
+s3-eth3-s4-eth2,3.72637933,0.023167892,0.025229177,17
+s4-eth3-s1-eth3,3.726318582,0.02321667,0.025374053,18
+s1-eth2-s2-eth2,3.723498368,0.023207069,0.025120958,17
+s2-eth3-s3-eth2,3.724764514,0.023521688,0.025581455,15
+s3-eth3-s4-eth2,3.725104032,0.023521051,0.029830694,15
+s4-eth3-s1-eth3,3.697868485,0.023939104,0.025966325,16
+s1-eth2-s2-eth2,85.0,4.0,-81.213983851,21
+s2-eth3-s3-eth2,86.0,4.0,-82.248556782,20
+s3-eth3-s4-eth2,3.727097821,0.023452659,0.025390167,22
+s4-eth3-s1-eth3,73.0,3.0,-69.246885822,19
+s1-eth2-s2-eth2,3.724999907,0.060361951,0.062501888,18
+s2-eth3-s3-eth2,3.752516159,0.023275415,0.025936851,19
+s3-eth3-s4-eth2,3.724865677,0.023274418,0.025404589,16
+s4-eth3-s1-eth3,3.730488651,0.023227705,0.025067136,19
+s1-eth2-s2-eth2,99.0,-95.253331829,-95.251235816,19
+s2-eth3-s3-eth2,3.720806776,0.023218218,0.025262119,20
+
+
+s1-eth2-s2-eth2,4.683774046,0.022971321,0.024419825,11
+s2-eth3-s3-eth2,4.679997252,0.023193627,0.024688975,14
+s3-eth3-s4-eth2,4.679109534,0.023132088,0.024779922,19
+s4-eth3-s1-eth3,4.680790379,0.023475254,0.025036695,16
+s1-eth2-s2-eth2,4.682177,0.022968713,0.024458316,17
+s2-eth3-s3-eth2,4.68266553,0.023096921,0.024776663,19
+s3-eth3-s4-eth2,4.792011071,0.023306161,0.025204862,20
+s4-eth3-s1-eth3,4.68004685,0.023538012,0.025718815,21
+s1-eth2-s2-eth2,4.681449526,0.024151738,0.025673415,13
+s2-eth3-s3-eth2,4.781604201,0.023188106,0.024655934,14
+s3-eth3-s4-eth2,4.68448282,0.023170659,0.024716793,16
+s4-eth3-s1-eth3,4.776888234,0.036201935,0.038075418,15
+s1-eth2-s2-eth2,4.681387642,0.023197872,0.02474417,16
+s2-eth3-s3-eth2,4.682283653,0.023228029,0.024858175,17
+s3-eth3-s4-eth2,4.683659617,0.023305688,0.024792593,22
+s4-eth3-s1-eth3,4.676264885,0.023197765,0.024665594,14
+s1-eth2-s2-eth2,4.666452067,0.023223525,0.024708761,19
+s2-eth3-s3-eth2,4.794130394,0.023567473,0.025153057,15
+s3-eth3-s4-eth2,4.685570488,0.023154973,0.024958294,15
+s4-eth3-s1-eth3,4.68396617,0.023154404,0.02464258,14
+s1-eth2-s2-eth2,4.682798485,0.02297279,0.024610589,18
+s2-eth3-s3-eth2,4.685645764,0.023162375,0.024637234,18
+s3-eth3-s4-eth2,4.690928657,0.022943673,0.024504682,15
+s4-eth3-s1-eth3,4.685023731,0.023274606,0.024881551,20
+s1-eth2-s2-eth2,4.799316158,0.023107419,0.024700388,14
+s2-eth3-s3-eth2,4.68613719,0.023291767,0.024827125,14
+s3-eth3-s4-eth2,4.790926395,0.023029622,0.0250199,24
+s4-eth3-s1-eth3,4.683214376,0.023300714,0.02483274,15
+s1-eth2-s2-eth2,4.71530354,0.037605378,0.039111402,12
+s2-eth3-s3-eth2,4.681348534,0.0230631,0.024630789,14
+s3-eth3-s4-eth2,4.681644104,0.022992017,0.024648692,15
+s4-eth3-s1-eth3,4.676140824,0.023120013,0.024734305,13
+s1-eth2-s2-eth2,4.643133735,0.023146732,0.024690441,15
+s2-eth3-s3-eth2,4.779427906,0.023040856,0.024525512,13
+s3-eth3-s4-eth2,4.682354193,0.023532013,0.025064118,18
+s4-eth3-s1-eth3,4.68459302,0.023289593,0.025330639,20
+s1-eth2-s2-eth2,4.683787047,0.023088357,0.024685799,13
+s2-eth3-s3-eth2,4.684356713,0.023054794,0.025495489,17
+s3-eth3-s4-eth2,4.679818703,0.023123003,0.024593196,14
+s4-eth3-s1-eth3,4.777051997,0.02306966,0.024542973,21
+s1-eth2-s2-eth2,4.680990896,0.023908254,0.02536175,12
+s2-eth3-s3-eth2,4.615859253,0.023473783,0.025026145,13
+s3-eth3-s4-eth2,4.68089507,0.022984168,0.02438046,17
+s4-eth3-s1-eth3,4.793382897,0.023081381,0.024510236,18
+s1-eth2-s2-eth2,4.684490517,0.022917226,0.024253044,15
+s2-eth3-s3-eth2,4.683403867,0.023126018,0.029897307,14
+s3-eth3-s4-eth2,4.783677086,0.024758827,0.027062768,12
+s4-eth3-s1-eth3,4.777460531,0.023513252,0.025252039,18
+s1-eth2-s2-eth2,4.68268679,0.023188669,0.024594292,16
+s2-eth3-s3-eth2,4.68487519,0.023053351,0.024535731,15
+s3-eth3-s4-eth2,4.684389641,0.023077102,0.024511311,17
+s4-eth3-s1-eth3,4.68038328,0.023439746,0.025452502,18
+s1-eth2-s2-eth2,4.684944846,0.023320647,0.024743991,20
+s2-eth3-s3-eth2,4.687062548,0.022988456,0.02441619,16
+s3-eth3-s4-eth2,4.685624723,0.022997478,0.02477871,18
+s4-eth3-s1-eth3,4.679589975,0.022937217,0.024628929,19
+s1-eth2-s2-eth2,4.807012757,0.023667372,0.02597201,16
+s2-eth3-s3-eth2,4.681275167,0.022913276,0.0245768,20
+s3-eth3-s4-eth2,4.672615965,0.023304767,0.025151158,17
+s4-eth3-s1-eth3,4.77618698,0.023048592,0.024257822,17
+s1-eth2-s2-eth2,4.753623765,0.022961466,0.024345821,11
+s2-eth3-s3-eth2,4.68401996,0.02336453,0.025073926,17
+s3-eth3-s4-eth2,4.683730114,0.022865068,0.024519935,19
+s4-eth3-s1-eth3,4.799305126,0.023139917,0.024790167,13
+s1-eth2-s2-eth2,4.682603332,0.022955272,0.024622794,11
+s2-eth3-s3-eth2,78.0,6.0,-73.295617708,10
+s3-eth3-s4-eth2,4.68517601,0.023433917,0.025341802,15
+s4-eth3-s1-eth3,4.68048372,0.022944394,0.02418175,13
+s1-eth2-s2-eth2,4.680004592,0.022817269,0.02526034,14
+s2-eth3-s3-eth2,4.673977593,0.022909318,0.024260811,14
+s3-eth3-s4-eth2,4.684214712,0.022889122,0.024594275,22
+s4-eth3-s1-eth3,4.68472681,0.022952494,0.024657802,11
+s1-eth2-s2-eth2,4.681815989,0.022846204,0.026544118,14
+s2-eth3-s3-eth2,4.686615595,0.02269948,0.02526833,11
+s3-eth3-s4-eth2,4.672412175,0.022923112,0.024859802,18
+s4-eth3-s1-eth3,4.684852922,0.023226525,0.024850718,18
+s1-eth2-s2-eth2,4.686353132,0.02302359,0.024388383,15
+s2-eth3-s3-eth2,4.776236867,0.022991362,0.024430456,18
+s3-eth3-s4-eth2,4.682735464,0.024266849,0.026117602,17
+s4-eth3-s1-eth3,4.679602663,0.041882409,0.04349241,17
+
+

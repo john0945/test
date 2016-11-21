@@ -116,10 +116,19 @@ class USNET(Topo):
                 self.addLink(s[7][h + 1], r_host[h + 1])
             else:
                 self.addLink(s[7][h + 2], r_host[h + 1])
-
+        i=0
         for l in connections:
-            l = self.addLink(s[l[0]][l[1]], s[l[2]][l[3]])
             #print(l)
+            i = i+1
+            self.addLink(s[l[0]][l[1]], s[l[2]][l[3]])
+            if i==2:
+                self.addLink(s[l[0]][l[1]], s[l[2]][l[3]])
+            if i==3:
+                self.addLink(s[l[0]][l[1]], s[l[2]][l[3]])
+                self.addLink(s[l[0]][l[1]], s[l[2]][l[3]]) #
+                i=0
+
+
 
 def enable_bfd(net):
     links = net.links
@@ -160,12 +169,13 @@ def test(net):
 
             sleep(0.5)
 
+
 def usnet_run():
     "Create and test a simple network"
     topo = USNET()
     switch = partial( OVSSwitch, protocols='OpenFlow13' )
     net = Mininet(topo=topo, switch=switch, controller=None)
-    net.addController('c0', controller=RemoteController, ip="127.0.0.1", port=6633)
+    net.addController('c0', controller=RemoteController, ip="172.31.21.103", port=6633)
     net.start()
     enable_bfd(net)
     print "bfd enabled"

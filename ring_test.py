@@ -102,6 +102,7 @@ def testing(net, time):
     sleep(5)
     h1.cmd("kill %ping")
     h2.cmd("kill %tcpdump")
+
     net.configLinkStatus( node1, node2, 'up' )
 
     h2.cmd("tcpdump -tttttnr './pcaps/{t}.pcap' src host {ip} > ./results/'{t}.txt'".format(t=time, ip = h1.IP()))

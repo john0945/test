@@ -98,11 +98,11 @@ def link_test(net):
             filename = intf_name + '-' + intf_name2
 
             os.system("sudo tshark -n -i eth0 -T text > tester_results/{}.txt  &".format(filename))
-            sleep(1)
+            sleep(3)
             node1.cmd("ifconfig {} down &".format(intf_name))
             node2.cmd("ifconfig {} down &".format(intf_name2))
 
-            sleep(2)
+            sleep(3)
 
             # net.pingAll()
             os.system("sudo pkill tshark")

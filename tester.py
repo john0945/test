@@ -8,7 +8,7 @@ from mininet.node import RemoteController, UserSwitch, Host
 from mininet.util import dumpNodeConnections
 from mininet.log import setLogLevel
 from mininet.cli import CLI
-import usnet, backup, ag_n_test
+import usnet, backup, ag_n_test, lattice
 from time import ctime, sleep
 from mininet.node import OVSSwitch
 from functools import partial
@@ -206,6 +206,8 @@ def config(opts):
         topo_func = backup.backup()
     if topo == 'agg':
         topo_func = ag_n_test.USNET()
+    if topo == 'lat':
+        topo_func = lattice.lattice()
 
     switch = partial( OVSSwitch, protocols='OpenFlow13' )
     net = Mininet(topo=topo_func, switch=switch, controller=None)

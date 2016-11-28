@@ -8,7 +8,7 @@ from mininet.node import RemoteController, UserSwitch, Host
 from mininet.util import dumpNodeConnections
 from mininet.log import setLogLevel
 from mininet.cli import CLI
-import usnet, backup, ag_n_test
+import usnet, backup, ag_n_test, lattice
 from time import ctime, sleep
 from mininet.node import OVSSwitch
 from functools import partial
@@ -62,22 +62,22 @@ def node_test(net):
         else:
             filename = switch.name
             os.system("sudo tshark -n -i eth0 -T text > tester_results/{}.txt  &".format(filename))
-
+            sleep(3)
             for k, v in switch.ports.items():
                 if k.name[0] == 's':
                     switch.cmd("ifconfig {} down &".format(k))
 
             print (switch.name)
 
-            sleep(1)
-            net.pingAll()
+            sleep(3)
+            # net.pingAll()
             os.system("sudo pkill tshark")
             append_results(filename)
 
             for k, v in switch.ports.items():
                 if k.name[0] == 's':
                     switch.cmd("ifconfig {} up &".format(k))
-
+            sleep(3)
 
 
 
@@ -98,11 +98,11 @@ def link_test(net):
             filename = intf_name + '-' + intf_name2
 
             os.system("sudo tshark -n -i eth0 -T text > tester_results/{}.txt  &".format(filename))
-            sleep(1)
+            sleep(3)
             node1.cmd("ifconfig {} down &".format(intf_name))
             node2.cmd("ifconfig {} down &".format(intf_name2))
 
-            sleep(2)
+            sleep(3)
 
             # net.pingAll()
             os.system("sudo pkill tshark")
@@ -134,28 +134,45 @@ def agg_test(net):
 
         os.system("sudo tshark -n -i eth0 -T text > tester_results/{}.txt  &".format(filename))
 
-        for intf in switch1.intfs:
-            if intf.link.intf2.node == switch2:
-                intf_name = intf.name
-                intf_name2 = intf.link.intf2.name
+        sleep(3)
+        links = 0
+        try:
 
-                print(intf_name + "       " + intf_name2)
+            s1intfs = switch1.intfs
+            s1intfs.pop(0)
+            for intf in s1intfs:
+                print (intf)
+                if intf.link.intf2.node == switch2:
+                    links += 1
+                    print(links)
 
-                switch1.cmd("ifconfig {} down &".format(intf_name))
-                switch2.cmd("ifconfig {} down &".format(intf_name2))
+            if links > 1:
+                for intf in s1intfs:
+                    if intf.link.intf2.node == switch2:
+                        intf_name = intf.name
+                        intf_name2 = intf.link.intf2.name
 
-        sleep(1)
-        net.pingAll()
+                        print(intf_name + "       " + intf_name2)
 
-        os.system("sudo pkill tshark")
-        append_results(filename)
-        for intf in switch1.intfs:
-            if intf.link.intf2.node == switch2:
-                intf_name = intf.name
-                intf_name2 = intf.link.intf2.name
+                        switch1.cmd("ifconfig {} down &".format(intf_name))
+                        switch2.cmd("ifconfig {} down &".format(intf_name2))
 
-                switch1.cmd("ifconfig {} up &".format(intf_name))
-                switch2.cmd("ifconfig {} up &".format(intf_name2))
+                sleep(3)
+                # net.pingAll()
+
+                os.system("sudo pkill tshark")
+                append_results(filename)
+                for intf in s1intfs:
+                    if intf.link.intf2.node == switch2:
+                        intf_name = intf.name
+                        intf_name2 = intf.link.intf2.name
+
+                        switch1.cmd("ifconfig {} up &".format(intf_name))
+                        switch2.cmd("ifconfig {} up &".format(intf_name2))
+
+                sleep(3)
+        except:
+            pass
 
 def append_results(filename):
     log = open("log.txt", 'a')
@@ -206,6 +223,9 @@ def config(opts):
         topo_func = backup.backup()
     if topo == 'agg':
         topo_func = ag_n_test.USNET()
+    if topo == 'lat':
+        topo_func = lattice.lattice()
+
 
     switch = partial( OVSSwitch, protocols='OpenFlow13' )
     net = Mininet(topo=topo_func, switch=switch, controller=None)
@@ -229,6 +249,11 @@ def config(opts):
     if test == 'agg':
         agg_test(net)
 
+    if test == 'all':
+        for i in range(5):
+            link_test(net)
+            agg_test(net)
+            node_test(net)
     # print(self.switches)
 
     CLI(net)
